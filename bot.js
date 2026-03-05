@@ -205,7 +205,12 @@ function checkPaddleCollision(side) {
 
 // ===== AI =====
 function updateAI(dt) {
-    updateRobotAI('left', dt);
+    // In PvE mode, left side is human-controlled
+    if (state.mode === 'pve') {
+        updateHumanPlayer(dt);
+    } else {
+        updateRobotAI('left', dt);
+    }
     updateRobotAI('right', dt);
 }
 

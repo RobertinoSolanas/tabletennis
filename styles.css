@@ -56,8 +56,15 @@ body {
 }
 
 @keyframes shimmer {
-    0%, 100% { filter: brightness(1); }
-    50% { filter: brightness(1.3); }
+
+    0%,
+    100% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(1.3);
+    }
 }
 
 /* Ping pong loader animation */
@@ -90,19 +97,53 @@ body {
 }
 
 @keyframes pingpong {
-    0% { left: 0; top: 40px; }
-    25% { top: 0; }
-    50% { left: 80px; top: 40px; }
-    75% { top: 0; }
-    100% { left: 0; top: 40px; }
+    0% {
+        left: 0;
+        top: 40px;
+    }
+
+    25% {
+        top: 0;
+    }
+
+    50% {
+        left: 80px;
+        top: 40px;
+    }
+
+    75% {
+        top: 0;
+    }
+
+    100% {
+        left: 0;
+        top: 40px;
+    }
 }
 
 @keyframes shadowMove {
-    0% { left: 0; transform: scaleX(1); }
-    25% { transform: scaleX(0.5); }
-    50% { left: 80px; transform: scaleX(1); }
-    75% { transform: scaleX(0.5); }
-    100% { left: 0; transform: scaleX(1); }
+    0% {
+        left: 0;
+        transform: scaleX(1);
+    }
+
+    25% {
+        transform: scaleX(0.5);
+    }
+
+    50% {
+        left: 80px;
+        transform: scaleX(1);
+    }
+
+    75% {
+        transform: scaleX(0.5);
+    }
+
+    100% {
+        left: 0;
+        transform: scaleX(1);
+    }
 }
 
 /* ===== GAME CONTAINER ===== */
@@ -311,6 +352,7 @@ body {
         transform: scale(0.5);
         opacity: 0;
     }
+
     to {
         transform: scale(1);
         opacity: 1;
@@ -330,11 +372,107 @@ body {
     color: #6666aa;
 }
 
-.ball-speed, .spin-info {
+.ball-speed,
+.spin-info {
     background: rgba(10, 10, 30, 0.6);
     padding: 4px 12px;
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ===== MAIN MENU ===== */
+#main-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0a0a2e 0%, #1a1a3e 50%, #0a0a2e 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 500;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+#main-menu.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.menu-content {
+    text-align: center;
+}
+
+.menu-content h1 {
+    font-size: 3rem;
+    margin-bottom: 8px;
+    background: linear-gradient(90deg, #ff4444, #ffaa00, #44aaff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.menu-subtitle {
+    color: #8888aa;
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    margin-bottom: 2.5rem;
+}
+
+.menu-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.mode-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background: rgba(30, 30, 60, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    padding: 28px 40px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    min-width: 180px;
+}
+
+.mode-btn:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(50, 50, 90, 0.8);
+}
+
+.mode-btn.primary {
+    background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+    border: none;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+}
+
+.mode-btn.primary:hover {
+    box-shadow: 0 12px 30px rgba(59, 130, 246, 0.6);
+}
+
+.mode-icon {
+    font-size: 2rem;
+}
+
+.mode-label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.mode-desc {
+    font-size: 0.75rem;
+    opacity: 0.6;
+    letter-spacing: 1px;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -363,5 +501,10 @@ body {
     .control-btn {
         padding: 8px 12px;
         font-size: 0.75rem;
+    }
+
+    .menu-buttons {
+        flex-direction: column;
+        align-items: center;
     }
 }

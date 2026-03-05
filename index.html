@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
+
 <body>
     <div id="loading-screen">
         <div class="loader-content">
@@ -19,14 +21,33 @@
         </div>
     </div>
 
+    <div id="main-menu">
+        <div class="menu-content">
+            <h1>🏓 ROBOT TABLE TENNIS</h1>
+            <p class="menu-subtitle">Choose Your Mode</p>
+            <div class="menu-buttons">
+                <button id="btn-mode-eve" class="mode-btn" onclick="startGame('eve')">
+                    <span class="mode-icon">🤖 vs 🤖</span>
+                    <span class="mode-label">WATCH</span>
+                    <span class="mode-desc">Robot vs Robot</span>
+                </button>
+                <button id="btn-mode-pve" class="mode-btn primary" onclick="startGame('pve')">
+                    <span class="mode-icon">🎮 vs 🤖</span>
+                    <span class="mode-label">PLAY</span>
+                    <span class="mode-desc">Human vs Robot</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <div id="game-container">
         <canvas id="gameCanvas"></canvas>
     </div>
 
     <div id="scoreboard">
         <div class="player-score left">
-            <div class="robot-icon">🤖</div>
-            <div class="player-name">ROBO-RED</div>
+            <div class="robot-icon" id="icon-left">🤖</div>
+            <div class="player-name" id="name-left">ROBO-RED</div>
             <div class="score" id="score-left">0</div>
             <div class="sets" id="sets-left">Sets: 0</div>
         </div>
@@ -66,4 +87,5 @@
     <script src="bot.js"></script>
     <script src="game.js"></script>
 </body>
+
 </html>
