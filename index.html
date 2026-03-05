@@ -21,17 +21,18 @@
         </div>
     </div>
 
-    <div id="main-menu">
+    <div id="main-menu"
+        style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:999;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0a0a2e,#1a1a3e,#0a0a2e);">
         <div class="menu-content">
             <h1>🏓 ROBOT TABLE TENNIS</h1>
             <p class="menu-subtitle">Choose Your Mode</p>
             <div class="menu-buttons">
-                <button id="btn-mode-eve" class="mode-btn" onclick="startGame('eve')">
+                <button id="btn-mode-eve" class="mode-btn">
                     <span class="mode-icon">🤖 vs 🤖</span>
                     <span class="mode-label">WATCH</span>
                     <span class="mode-desc">Robot vs Robot</span>
                 </button>
-                <button id="btn-mode-pve" class="mode-btn primary" onclick="startGame('pve')">
+                <button id="btn-mode-pve" class="mode-btn primary">
                     <span class="mode-icon">🎮 vs 🤖</span>
                     <span class="mode-label">PLAY</span>
                     <span class="mode-desc">Human vs Robot</span>
@@ -84,6 +85,7 @@
         <div class="spin-info" id="spin-info">Spin: None</div>
     </div>
 
+    <script src="human.js"></script>
     <script src="bot.js"></script>
     <script src="game.js"></script>
 </body>
