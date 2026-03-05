@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏓 Table Tennis - Robot Championship</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loader-content">
+            <div class="ping-pong-loader">
+                <div class="ball"></div>
+                <div class="shadow"></div>
+            </div>
+            <h1>🏓 ROBOT TABLE TENNIS</h1>
+            <p>Loading Championship Arena...</p>
+        </div>
+    </div>
+
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+    </div>
+
+    <div id="scoreboard">
+        <div class="player-score left">
+            <div class="robot-icon">🤖</div>
+            <div class="player-name">ROBO-RED</div>
+            <div class="score" id="score-left">0</div>
+            <div class="sets" id="sets-left">Sets: 0</div>
+        </div>
+        <div class="match-info">
+            <div class="serving-indicator" id="serving-indicator">🏓 SERVING</div>
+            <div class="game-status" id="game-status">MATCH START</div>
+        </div>
+        <div class="player-score right">
+            <div class="robot-icon">🤖</div>
+            <div class="player-name">ROBO-BLUE</div>
+            <div class="score" id="score-right">0</div>
+            <div class="sets" id="sets-right">Sets: 0</div>
+        </div>
+    </div>
+
+    <div id="controls-panel">
+        <button id="btn-camera" class="control-btn" title="Change Camera">📷</button>
+        <button id="btn-speed" class="control-btn" title="Game Speed">⏱️ 1x</button>
+        <button id="btn-sound" class="control-btn" title="Toggle Sound">🔊</button>
+        <button id="btn-pause" class="control-btn" title="Pause/Resume">⏸️</button>
+        <button id="btn-reset" class="control-btn" title="New Match">🔄</button>
+    </div>
+
+    <div id="rally-counter">
+        <span id="rally-text">Rally: 0</span>
+    </div>
+
+    <div id="announcement" class="hidden">
+        <div class="announcement-text" id="announcement-text"></div>
+    </div>
+
+    <div id="info-panel">
+        <div class="ball-speed" id="ball-speed">Speed: 0 km/h</div>
+        <div class="spin-info" id="spin-info">Spin: None</div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
